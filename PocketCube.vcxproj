@@ -108,7 +108,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\cube_moves.cpp" />
+    <ClCompile Include="src\geometry.cpp" />
+    <ClCompile Include="src\init_ui.cpp" />
+    <ClCompile Include="src\input.cpp" />
     <ClCompile Include="src\PocketCube.cpp" />
+    <ClCompile Include="src\render.cpp" />
+    <ClCompile Include="src\solver_driver.cpp" />
+    <ClCompile Include="src\solver_first_layer.cpp" />
+    <ClCompile Include="src\solver_last_layer_orient.cpp" />
+    <ClCompile Include="src\solver_last_layer_permute.cpp" />
+    <ClCompile Include="src\solver_middle_layer.cpp" />
+    <ClCompile Include="src\state.cpp" />
+    <ClCompile Include="src\texture.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\PocketCube.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="assets\pic.bmp" />

@@ -42,7 +42,7 @@ The build task calls `scripts/build-debug-x64.cmd`, which initializes the Visual
 ```text
 .
 ├── assets/                  Runtime images and texture files
-├── src/                     C++ source code
+├── src/                     C++ source code split by responsibility
 ├── scripts/                 VS Code build/clean helper scripts
 ├── vendor/                  Vendored OpenGL/freeglut/GLEW package files
 ├── .vscode/                 VS Code tasks, debugger, and IntelliSense config
@@ -51,3 +51,20 @@ The build task calls `scripts/build-debug-x64.cmd`, which initializes the Visual
 ```
 
 Generated files are written to `bin/` and `build/`; both directories are ignored by Git.
+
+## Source Modules
+
+- `PocketCube.h`: shared declarations, global state, and function prototypes
+- `PocketCube.cpp`: program entry point
+- `state.cpp`: cube state, render colors, animation flags, and face vertex data
+- `init_ui.cpp`: OpenGL initialization, cube color initialization, and EasyX help UI
+- `texture.cpp`: BMP texture loading
+- `cube_moves.cpp`: cube color-state transformations
+- `geometry.cpp`: face checks, animated rotations, and camera movement helpers
+- `solver_first_layer.cpp`: first-layer recovery steps
+- `solver_middle_layer.cpp`: middle-layer edge recovery
+- `solver_last_layer_orient.cpp`: last-layer orientation
+- `solver_last_layer_permute.cpp`: last-layer permutation
+- `solver_driver.cpp`: solve path setup and automatic recovery driver
+- `input.cpp`: keyboard, mouse, scramble, and auto-recovery callbacks
+- `render.cpp`: OpenGL drawing routine
